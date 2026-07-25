@@ -1,14 +1,16 @@
 import { useLanguage } from '../hooks/useLanguage'
+import { AllergensSection } from './AllergensSection'
 
 export function MenuFooter() {
   const { ui } = useLanguage()
 
   return (
-    <footer className="space-y-3 px-4 pb-10 pt-4 text-center text-copid-accent">
-      <div id="allergens" className="text-sm font-semibold opacity-90">
-        {ui('allergensLink')}
-      </div>
-      <div id="feedback" className="text-sm font-semibold opacity-90">
+    <footer className="pt-2">
+      <AllergensSection />
+      <div
+        id="feedback"
+        className="px-4 pb-10 pt-5 text-center text-sm font-semibold text-copid-accent opacity-90"
+      >
         {ui('feedbackLink')}
       </div>
     </footer>
