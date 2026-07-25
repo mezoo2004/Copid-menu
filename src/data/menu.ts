@@ -209,10 +209,10 @@ export const products: Product[] = [
   {
     id: 'garlic-sauce',
     categoryId: 'sauces',
-    name: { ar: 'صوص سموكي', en: 'Smoky Sauce' },
+    name: { ar: 'صوص سبايسي', en: 'Spicy Sauce' },
     description: {
-      ar: 'صوص سموكي',
-      en: 'Smoky Signature Sauce',
+      ar: 'صوص سبايسي الخاص',
+      en: 'Signature Spicy Sauce',
     },
     image: '/images/products/copid_spicy_sauce.png',
     calories: 567,
