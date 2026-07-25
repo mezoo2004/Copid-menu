@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@theme {
+  --color-copid-bg: #23392c;
+  --color-copid-sheet: #647a54;
+  --color-copid-accent: #f5dab1;
+  --color-copid-accent-soft: #e8c9a8;
+  --color-copid-price: #f0d4b8;
+  --color-copid-muted: #d4b89a;
+  --color-copid-page: #f8f8f8;
+  --color-copid-deep: #1e392a;
+  --font-arabic: "IBM Plex Sans Arabic", "Cairo", sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-ui: "Cairo", "IBM Plex Sans Arabic", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100dvh;
+  overflow-x: clip;
+  font-family: var(--font-ui);
+  background: var(--color-copid-page);
+  color: var(--color-copid-accent);
+}
+
+#root {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu-shell {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  min-height: 100dvh;
+  min-width: 0;
+  background: var(--color-copid-bg);
+  color: var(--color-copid-accent);
+  position: relative;
+  overflow-x: clip;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-nav-sticky {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 40;
+  background: var(--color-copid-bg);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.category-nav-sticky.is-pinned {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.category-pill.active .category-icon-circle {
+  outline: 2px solid var(--color-copid-accent);
+  outline-offset: 2px;
+}
+
+.price-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  max-width: 100%;
+  background: var(--color-copid-price);
+  color: var(--color-copid-deep);
+  border-radius: 0.45rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  border: 1px solid rgba(30, 57, 42, 0.12);
+  white-space: nowrap;
+}
+
+.sheet-panel {
+  background: var(--color-copid-sheet);
+  border-radius: 1.5rem 1.5rem 0 0;
+  min-height: 50dvh;
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.sheet-handle {
+  width: 2.5rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: rgba(245, 218, 177, 0.35);
+  margin: 0.75rem auto 0.5rem;
+}
+
+.product-image {
+  width: 106px;
+  height: 106px;
+  max-width: 32vw;
+  max-height: 32vw;
+  border-radius: 1rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Classic Burger only: slight zoom inside the same container */
+.product-image-frame {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+}
+
+.product-image-frame .product-image-zoom {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: scale(1.13);
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Crispy Chicken only: slightly more zoomed out for full burger balance */
+.product-image-frame .product-image-zoom--crispy {
+  object-position: center 48%;
+  transform: scale(1.03);
+}
+
+/* Travel / Open Box: zoomed out so full box lid + container stay visible */
+.product-image-frame .product-image-zoom--travel {
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1);
+}
+
+/* Jalapeño Chicken: ~80–85% frame fill, slightly less zoom than Classic */
+.product-image-frame .product-image-zoom--jalapeno {
+  object-fit: cover;
+  object-position: center 46%;
+  transform: scale(1.05);
+}
+
+/* Coca-Cola Light: full can visible, same visual balance as Coca-Cola Original */
+.product-image.product-image--cola-light {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Arwa Water only: zoom-in so bottle fills ~90% of frame */
+.product-image-frame .product-image-drink--arwa {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.75);
+  border-radius: 0;
+  background: transparent;
+}
+
+.cover-frame {
+  position: relative;
+  width: 100%;
+  height: min(280px, 52vw);
+  min-height: 180px;
+  overflow: hidden;
+  background: var(--color-copid-bg);
+}
+
+.cover-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7;
+}
+
+.cover-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 38%,
+    rgb(35 57 44 / 0.12) 48%,
+    rgb(35 57 44 / 0.35) 58%,
+    rgb(35 57 44 / 0.58) 70%,
+    rgb(35 57 44 / 0.8) 82%,
+    rgb(35 57 44 / 0.94) 92%,
+    var(--color-copid-bg) 100%
+  );
+}
+
+.menu-profile-btn {
+  top: max(0.75rem, env(safe-area-inset-top, 0px));
+}
+
+/* Decorative COPID Agave — bottom-right watermark */
+.brand-section {
+  position: relative;
+}
+
+/* Clip only the decoration so sticky category nav keeps working */
+.brand-agave-clip {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.brand-agave {
+  position: absolute;
+  right: -130px;
+  bottom: -120px;
+  top: auto;
+  z-index: 0;
+  width: 400px;
+  height: 400px;
+  background-image: url("/images/copid-agave.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  opacity: 0.09;
+  filter: blur(1px) brightness(0.7) saturate(0.7);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.brand-section-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .brand-agave {
+    width: 340px;
+    height: 340px;
+    right: -110px;
+    bottom: -100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-agave {
+    width: 260px;
+    height: 260px;
+    right: -85px;
+    bottom: -70px;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-image {
+    width: 88px;
+    height: 88px;
+    max-width: 30vw;
+    max-height: 30vw;
+  }
+
+  .price-badge {
+    font-size: 0.82rem;
+    padding: 0.18rem 0.45rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .product-image {
+    width: 80px;
+    height: 80px;
+  }
+}
