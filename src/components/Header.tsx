@@ -7,13 +7,12 @@ type Props = {
 export function Header({ onMenuClick }: Props) {
   return (
     <header className="relative z-[2] w-full min-w-0">
-      <div className="cover-frame">
-        <img
-          src={restaurant.coverImage}
-          alt=""
-          fetchPriority="high"
-        />
-
+      <div
+        className="cover-frame"
+        style={{ backgroundImage: `url(${restaurant.coverImage})` }}
+        role="img"
+        aria-label={restaurant.name.en}
+      >
         <button
           type="button"
           onClick={onMenuClick}
@@ -32,14 +31,13 @@ export function Header({ onMenuClick }: Props) {
         </button>
       </div>
 
-      <div className="relative z-10 -mt-[60px] flex justify-center">
-        <img
-          src={restaurant.logo}
-          alt={restaurant.name.en}
-          className="!h-[120px] !w-[120px] max-h-[120px] max-w-[120px] rounded-full border-[3px] border-copid-bg object-cover shadow-lg"
-          width={120}
-          height={120}
-        />
+      <div className="floating-logo">
+        <div className="floating-logo-badge">
+          <img
+            src="/images/logo-badge.png"
+            alt={restaurant.name.en}
+          />
+        </div>
       </div>
     </header>
   )

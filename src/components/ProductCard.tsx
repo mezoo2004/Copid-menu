@@ -79,6 +79,18 @@ export function ProductCard({ product }: Props) {
           </p>
         ) : null}
 
+        {product.categoryId === 'burgers' ? (
+          <div className="mt-1 text-[11px] leading-snug text-copid-accent/80">
+            <p className="font-semibold text-copid-accent/90">{ui('addonsTitle')}</p>
+            {product.id === 'copid-grilled-chicken' ||
+            product.id === 'copid-smoky-burger' ||
+            product.id === 'copid-travel-burger' ? (
+              <p>• {ui('addonPatty')}</p>
+            ) : null}
+            <p>• {ui('addonCheese')}</p>
+          </div>
+        ) : null}
+
         {calories ? (
           <p className="mt-1.5 flex items-center gap-1 text-[12px] text-copid-accent/80">
             <span aria-hidden="true" className="text-[11px] text-emerald-200/90">
@@ -89,7 +101,7 @@ export function ProductCard({ product }: Props) {
         ) : null}
 
         <div className="mt-auto flex justify-start pt-2">
-          <PriceBadge price={product.price} />
+          <PriceBadge price={product.price} mealPrice={product.mealPrice} />
         </div>
       </div>
     </Link>

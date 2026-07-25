@@ -6,7 +6,7 @@ type Props = {
 }
 
 export function RestaurantInfo({ onFeedbackClick }: Props) {
-  const { tr, ui, toggleLocale } = useLanguage()
+  const { tr, ui, toggleLocale, locale } = useLanguage()
 
   return (
     <section className="relative px-4 pb-3 pt-2 text-copid-accent">
@@ -39,7 +39,11 @@ export function RestaurantInfo({ onFeedbackClick }: Props) {
       </div>
 
       <div className="text-center">
-        <h1 className="font-display text-[1.55rem] font-medium leading-tight tracking-wide text-copid-accent">
+        <h1
+          className={`welcome-heading text-[1.55rem] leading-tight text-copid-accent ${
+            locale === 'en' ? 'welcome-heading-en' : 'welcome-heading-ar'
+          }`}
+        >
           {tr(restaurant.welcome)}
         </h1>
 
@@ -64,7 +68,7 @@ export function RestaurantInfo({ onFeedbackClick }: Props) {
             <a
               href={restaurant.instagramUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="opacity-90 transition hover:opacity-100"
             >

@@ -130,7 +130,7 @@ export function ProductDetails() {
         ) : null}
 
         <div className="mt-6 flex justify-end">
-          <PriceBadge price={product.price} />
+          <PriceBadge price={product.price} mealPrice={product.mealPrice} />
         </div>
       </div>
     </div>

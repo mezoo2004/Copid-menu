@@ -17,6 +17,11 @@ export const ui = {
     share: 'مشاركة',
     close: 'إغلاق',
     menu: 'القائمة',
+    priceSingle: 'مفرد',
+    priceMeal: 'وجبة',
+    addonsTitle: 'الإضافات',
+    addonPatty: 'شريحة لحم إضافية +8 ريال',
+    addonCheese: 'شريحة جبن إضافية +3 ريال',
   },
   en: {
     languageLabel: 'العربية',
@@ -34,6 +39,11 @@ export const ui = {
     share: 'Share',
     close: 'Close',
     menu: 'Menu',
+    priceSingle: 'Single',
+    priceMeal: 'Meal',
+    addonsTitle: 'Add-ons',
+    addonPatty: 'Extra Beef Patty +8 SAR',
+    addonCheese: 'Extra Cheese Slice +3 SAR',
   },
 } as const
 

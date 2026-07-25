@@ -13,6 +13,7 @@ export type Product = {
   image: string
   calories: number | null
   price: number
+  mealPrice?: number
   available: boolean
   badge?: LocalizedString
   allergens?: LocalizedString[]

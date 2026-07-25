@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-copid-bg: #23392c;
-  --color-copid-sheet: #647a54;
+  --color-copid-bg: #1e3324;
+  --color-copid-sheet: #1e3324;
   --color-copid-accent: #f5dab1;
   --color-copid-accent-soft: #e8c9a8;
   --color-copid-price: #f0d4b8;
   --color-copid-muted: #d4b89a;
-  --color-copid-page: #f8f8f8;
+  --color-copid-page: #1e3324;
   --color-copid-deep: #1e392a;
   --font-arabic: "IBM Plex Sans Arabic", "Cairo", sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
@@ -209,38 +209,47 @@ button {
   height: min(280px, 52vw);
   min-height: 180px;
   overflow: hidden;
-  background: var(--color-copid-bg);
-}
-
-.cover-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.7;
-}
-
-.cover-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 38%,
-    rgb(35 57 44 / 0.12) 48%,
-    rgb(35 57 44 / 0.35) 58%,
-    rgb(35 57 44 / 0.58) 70%,
-    rgb(35 57 44 / 0.8) 82%,
-    rgb(35 57 44 / 0.94) 92%,
-    var(--color-copid-bg) 100%
-  );
+  background-color: var(--color-copid-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .menu-profile-btn {
   top: max(0.75rem, env(safe-area-inset-top, 0px));
+}
+
+.floating-logo {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  margin-top: -48px;
+  pointer-events: none;
+}
+
+.floating-logo-badge {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  background: var(--color-copid-bg);
+  border: 3px solid var(--color-copid-bg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.floating-logo-badge img {
+  width: 105%;
+  height: 105%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* Decorative COPID Agave — bottom-right watermark */
@@ -279,6 +288,18 @@ button {
 .brand-section-content {
   position: relative;
   z-index: 1;
+}
+
+.welcome-heading-en {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.welcome-heading-ar {
+  font-family: "Lalezar", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 @media (max-width: 1024px) {

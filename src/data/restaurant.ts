@@ -10,13 +10,13 @@ export const restaurant: RestaurantInfo = {
     en: 'Welcome To COPID',
   },
   logo: '/images/logo.png',
-  coverImage: '/images/copid-kitchen-hero.png',
+  coverImage: '/images/logo-hero.png',
   currency: {
     code: 'SAR',
     symbolAr: 'ر.س',
     symbolEn: 'SAR',
   },
-  instagramUrl: 'https://instagram.com/',
+  instagramUrl: 'https://www.instagram.com/copid.sa?igsh=bXhjaDdhMWl2MTFt',
   city: {
     ar: 'الرياض',
     en: 'Riyadh',
