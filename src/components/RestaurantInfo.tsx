@@ -39,13 +39,8 @@ export function RestaurantInfo({ onFeedbackClick }: Props) {
       </div>
 
       <div className="text-center">
-        <h1 className="welcome-heading text-copid-accent">
-          <span className="welcome-heading-ar" dir="rtl">
-            {restaurant.welcome.ar}
-          </span>
-          <span className="welcome-heading-en" dir="ltr">
-            {restaurant.welcome.en}
-          </span>
+        <h1 className="welcome-heading welcome-heading-en text-copid-accent" dir="ltr">
+          WELCOME TO COPID
         </h1>
 
         <div className="mt-3 flex items-center justify-center gap-5 text-copid-accent">
