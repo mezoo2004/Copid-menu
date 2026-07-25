@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ComponentType } from 'react'
-import { CupSoda, Drumstick, Sandwich, Soup, type LucideProps } from 'lucide-react'
+import { CupSoda, Drumstick, Sandwich, Soup, Utensils, type LucideProps } from 'lucide-react'
 import type { Category } from '../types/menu'
 import { useLanguage } from '../hooks/useLanguage'
 
@@ -15,8 +15,18 @@ type Props = {
 const categoryIcons: Record<string, ComponentType<LucideProps>> = {
   burgers: Sandwich,
   sides: Drumstick,
+  fries: Utensils,
   sauces: Soup,
   drinks: CupSoda,
+}
+
+/** Product photos used as category circle images (exact menu paths). */
+const categoryImages: Partial<Record<string, string>> = {
+  burgers: '/images/products/copid_smoky_burger.png',
+  sides: '/images/products/copid_smoky_wings.png',
+  fries: '/images/products/copid_sweet_potato_fries.png',
+  sauces: '/images/products/copid_c_sauce.png',
+  drinks: '/images/products/copid_coca_cola.png',
 }
 
 /** Horizontally center a pill inside the nav scroller only — never scrolls the page. */
@@ -65,6 +75,7 @@ export function CategoryNav({
         {categories.map((category) => {
           const isActive = category.id === activeId
           const Icon = categoryIcons[category.id] ?? Sandwich
+          const photo = categoryImages[category.id]
           return (
             <button
               key={category.id}
@@ -78,14 +89,23 @@ export function CategoryNav({
               }`}
               aria-current={isActive ? 'true' : undefined}
             >
-              <span className="category-icon-circle flex h-[72px] w-[72px] items-center justify-center rounded-full bg-black/20 shadow-md">
-                <Icon
-                  size={30}
-                  strokeWidth={1.75}
-                  absoluteStrokeWidth={false}
-                  className="text-copid-accent"
-                  aria-hidden="true"
-                />
+              <span className="category-icon-circle flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-full bg-black/20 shadow-md">
+                {photo ? (
+                  <img
+                    src={photo}
+                    alt=""
+                    className="category-icon-photo"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <Icon
+                    size={30}
+                    strokeWidth={1.75}
+                    absoluteStrokeWidth={false}
+                    className="text-copid-accent"
+                    aria-hidden="true"
+                  />
+                )}
               </span>
               <span className="line-clamp-2 min-h-[2.4em] text-center text-[12px] font-semibold leading-tight text-copid-accent">
                 {tr(category.name)}

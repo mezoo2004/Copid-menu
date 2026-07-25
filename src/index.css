@@ -99,6 +99,17 @@ button {
   outline-offset: 2px;
 }
 
+.category-icon-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
 .price-badge {
   display: inline-flex;
   align-items: center;
@@ -290,16 +301,29 @@ button {
   z-index: 1;
 }
 
-.welcome-heading-en {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+.welcome-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.15em;
+  line-height: 1.15;
 }
 
 .welcome-heading-ar {
-  font-family: "Lalezar", sans-serif;
+  display: block;
+  font-family: "Lalezar", "Cairo", sans-serif;
   font-weight: 400;
   letter-spacing: 0;
+  font-size: 1.75rem;
+}
+
+.welcome-heading-en {
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  font-size: 1.45rem;
 }
 
 @media (max-width: 1024px) {

@@ -6,7 +6,7 @@ type Props = {
 }
 
 export function RestaurantInfo({ onFeedbackClick }: Props) {
-  const { tr, ui, toggleLocale, locale } = useLanguage()
+  const { ui, toggleLocale } = useLanguage()
 
   return (
     <section className="relative px-4 pb-3 pt-2 text-copid-accent">
@@ -39,12 +39,13 @@ export function RestaurantInfo({ onFeedbackClick }: Props) {
       </div>
 
       <div className="text-center">
-        <h1
-          className={`welcome-heading text-[1.55rem] leading-tight text-copid-accent ${
-            locale === 'en' ? 'welcome-heading-en' : 'welcome-heading-ar'
-          }`}
-        >
-          {tr(restaurant.welcome)}
+        <h1 className="welcome-heading text-copid-accent">
+          <span className="welcome-heading-ar" dir="rtl">
+            {restaurant.welcome.ar}
+          </span>
+          <span className="welcome-heading-en" dir="ltr">
+            {restaurant.welcome.en}
+          </span>
         </h1>
 
         <div className="mt-3 flex items-center justify-center gap-5 text-copid-accent">

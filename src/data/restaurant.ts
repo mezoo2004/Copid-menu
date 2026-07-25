@@ -6,8 +6,8 @@ export const restaurant: RestaurantInfo = {
     en: 'COPID',
   },
   welcome: {
-    ar: 'أهلاً بكم في كوبيد',
-    en: 'Welcome To COPID',
+    ar: 'مرحبًا بكم في كوبد',
+    en: 'Welcome to COPID',
   },
   logo: '/images/logo.png',
   coverImage: '/images/logo-hero.png',

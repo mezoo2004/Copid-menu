@@ -82,11 +82,7 @@ export function ProductCard({ product }: Props) {
         {product.categoryId === 'burgers' ? (
           <div className="mt-1 text-[11px] leading-snug text-copid-accent/80">
             <p className="font-semibold text-copid-accent/90">{ui('addonsTitle')}</p>
-            {product.id === 'copid-grilled-chicken' ||
-            product.id === 'copid-smoky-burger' ||
-            product.id === 'copid-travel-burger' ? (
-              <p>• {ui('addonPatty')}</p>
-            ) : null}
+            <p>• {ui('addonPatty')}</p>
             <p>• {ui('addonCheese')}</p>
           </div>
         ) : null}
