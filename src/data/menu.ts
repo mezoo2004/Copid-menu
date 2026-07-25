@@ -8,7 +8,7 @@
 export const categories: Category[] = [
   {
     id: 'burgers',
-    name: { ar: 'الساندوتشات والبرقر', en: 'Sandwiches & Burgers' },
+    name: { ar: 'البرقر', en: 'Burgers' },
     image: '/images/placeholder-product.svg',
     order: 1,
   },
