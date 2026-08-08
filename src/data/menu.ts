@@ -125,7 +125,7 @@ export const products: Product[] = [
     },
     image: '/images/products/copid_smoky_wings.png',
     calories: 890,
-    price: 18,
+    price: 19,
     available: true,
   },
   {
