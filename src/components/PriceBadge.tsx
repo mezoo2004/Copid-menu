@@ -25,6 +25,29 @@ function Amount({ price }: { price: number }) {
   )
 }
 
+function LabeledPrice({ label, price }: { label: string; price: number }) {
+  const { locale } = useLanguage()
+  const amount = formatPrice(price, locale)
+
+  if (locale === 'ar') {
+    return (
+      <span className="price-badge price-badge--labeled">
+        <span>
+          {label}: {amount} ريال
+        </span>
+      </span>
+    )
+  }
+
+  return (
+    <span className="price-badge price-badge--labeled" dir="ltr">
+      <span>
+        {label}: SAR {amount}
+      </span>
+    </span>
+  )
+}
+
 export function PriceBadge({ price, mealPrice, className = '' }: Props) {
   const { ui } = useLanguage()
 
@@ -37,15 +60,9 @@ export function PriceBadge({ price, mealPrice, className = '' }: Props) {
   }
 
   return (
-    <span className={`flex flex-wrap items-center gap-1.5 ${className}`}>
-      <span className="price-badge" dir="ltr">
-        <span className="text-[0.78em] font-bold opacity-80">{ui('priceSingle')}</span>
-        <Amount price={price} />
-      </span>
-      <span className="price-badge" dir="ltr">
-        <span className="text-[0.78em] font-bold opacity-80">{ui('priceMeal')}</span>
-        <Amount price={mealPrice} />
-      </span>
+    <span className={`flex flex-col items-start gap-1 ${className}`}>
+      <LabeledPrice label={ui('priceSingle')} price={price} />
+      <LabeledPrice label={ui('priceMeal')} price={mealPrice} />
     </span>
   )
 }

@@ -96,7 +96,7 @@ export function ProductCard({ product }: Props) {
           </p>
         ) : null}
 
-        <div className="mt-auto flex justify-start pt-2">
+        <div className="mt-auto flex justify-start pt-1.5">
           <PriceBadge price={product.price} mealPrice={product.mealPrice} />
         </div>
       </div>
