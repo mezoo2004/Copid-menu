@@ -50,7 +50,7 @@ export const products: Product[] = [
     image: '/images/products/copid_burger.png',
     calories: 710,
     price: 22,
-    mealPrice: 29,
+    mealPrice: 30,
     available: true,
     allergens: [
       { ar: 'ألبان', en: 'Dairy' },
@@ -70,7 +70,7 @@ export const products: Product[] = [
     image: '/images/products/copid_smoky_burger.png',
     calories: 729,
     price: 23,
-    mealPrice: 30,
+    mealPrice: 31,
     available: true,
   },
   {
@@ -84,7 +84,7 @@ export const products: Product[] = [
     image: '/images/products/copid_truffle_burger.png',
     calories: 664,
     price: 23,
-    mealPrice: 30,
+    mealPrice: 31,
     available: true,
   },
   {
@@ -98,7 +98,7 @@ export const products: Product[] = [
     image: '/images/products/copid_crispy_chicken.png',
     calories: 564,
     price: 20,
-    mealPrice: 27,
+    mealPrice: 28,
     available: true,
   },
   {
@@ -112,7 +112,7 @@ export const products: Product[] = [
     image: '/images/products/copid_chipotle_chicken.png',
     calories: 693,
     price: 21,
-    mealPrice: 28,
+    mealPrice: 29,
     available: true,
   },
   {
@@ -200,16 +200,7 @@ export const products: Product[] = [
     price: 3,
     available: true,
   },
-  {
-    id: 'garlic-sauce',
-    categoryId: 'sauces',
-    name: { ar: 'صوص سبايسي', en: 'Spicy Sauce' },
-    description: { ar: '', en: '' },
-    image: '/images/products/copid_spicy_sauce.png',
-    calories: 567,
-    price: 3,
-    available: true,
-  },
+ 
   {
     id: 'coca-cola',
     categoryId: 'drinks',
