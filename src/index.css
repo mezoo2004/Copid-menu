@@ -187,18 +187,46 @@ button {
   transform: scale(1.03);
 }
 
-/* Travel / Open Box: zoomed out so full box lid + container stay visible */
+/* Truffle Burger: centered full-bleed crop inside the thumbnail */
 .product-image-frame .product-image-zoom--travel {
   object-fit: cover;
   object-position: center center;
   transform: scale(1);
 }
 
-/* Jalapeño Chicken: ~80–85% frame fill, slightly less zoom than Classic */
+/* Cupid Burger: a little closer, kept centered */
 .product-image-frame .product-image-zoom--jalapeno {
   object-fit: cover;
-  object-position: center 46%;
-  transform: scale(1.05);
+  object-position: center center;
+  transform: scale(1.14);
+}
+
+/* Smoky Burger: slightly zoomed out from the shared burger crop, centered */
+.product-image-frame .product-image-zoom--smoky {
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1);
+}
+
+/* Monster: closer crop on the burger, centered */
+.product-image-frame .product-image-zoom--monster {
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.55);
+}
+
+/* Brisket Fries: shift the crop onto the box so it sits in the thumbnail */
+.product-image-frame .product-image-zoom--brisket-fries {
+  object-fit: cover;
+  object-position: 72% center;
+  transform: scale(1);
+}
+
+/* Brisket Balls: a little closer, centered */
+.product-image-frame .product-image-zoom--brisket-balls {
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.16);
 }
 
 /* Coca-Cola Light: full can visible, same visual balance as Coca-Cola Original */

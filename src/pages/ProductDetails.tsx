@@ -129,9 +129,11 @@ export function ProductDetails() {
           </p>
         ) : null}
 
-        <div className="mt-6 flex justify-end">
-          <PriceBadge price={product.price} mealPrice={product.mealPrice} />
-        </div>
+        {product.price != null ? (
+          <div className="mt-6 flex justify-end">
+            <PriceBadge price={product.price} mealPrice={product.mealPrice} />
+          </div>
+        ) : null}
       </div>
     </div>
   )

@@ -23,6 +23,9 @@ export function ProductCard({ product }: Props) {
       product.id === 'copid-crispy-chicken' ||
       product.id === 'copid-travel-burger' ||
       product.id === 'copid-grilled-chicken' ||
+      product.id === 'copid-monster' ||
+      product.id === 'brisket-fries' ||
+      product.id === 'brisket-balls' ||
       product.id === 'arwa-water' ? (
         <span className="product-image product-image-frame">
           <img
@@ -35,9 +38,17 @@ export function ProductCard({ product }: Props) {
                   ? 'product-image-zoom product-image-zoom--travel'
                   : product.id === 'copid-grilled-chicken'
                     ? 'product-image-zoom product-image-zoom--jalapeno'
-                    : product.id === 'arwa-water'
-                      ? 'product-image-drink product-image-drink--arwa'
-                      : 'product-image-zoom'
+                    : product.id === 'copid-smoky-burger'
+                      ? 'product-image-zoom product-image-zoom--smoky'
+                      : product.id === 'copid-monster'
+                        ? 'product-image-zoom product-image-zoom--monster'
+                        : product.id === 'brisket-fries'
+                          ? 'product-image-zoom product-image-zoom--brisket-fries'
+                          : product.id === 'brisket-balls'
+                            ? 'product-image-zoom product-image-zoom--brisket-balls'
+                            : product.id === 'arwa-water'
+                              ? 'product-image-drink product-image-drink--arwa'
+                              : 'product-image-zoom'
             }
             width={106}
             height={106}
@@ -96,9 +107,11 @@ export function ProductCard({ product }: Props) {
           </p>
         ) : null}
 
-        <div className="mt-auto flex justify-start pt-1.5">
-          <PriceBadge price={product.price} mealPrice={product.mealPrice} />
-        </div>
+        {product.price != null ? (
+          <div className="mt-auto flex justify-start pt-1.5">
+            <PriceBadge price={product.price} mealPrice={product.mealPrice} />
+          </div>
+        ) : null}
       </div>
     </Link>
   )

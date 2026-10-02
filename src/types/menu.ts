@@ -12,7 +12,7 @@ export type Product = {
   description: LocalizedString
   image: string
   calories: number | null
-  price: number
+  price: number | null
   mealPrice?: number
   available: boolean
   badge?: LocalizedString
