@@ -26,6 +26,7 @@ export function ProductCard({ product }: Props) {
       product.id === 'copid-monster' ||
       product.id === 'brisket-fries' ||
       product.id === 'brisket-balls' ||
+      product.id === 'smoky-tender' ||
       product.id === 'arwa-water' ? (
         <span className="product-image product-image-frame">
           <img
@@ -46,9 +47,11 @@ export function ProductCard({ product }: Props) {
                           ? 'product-image-zoom product-image-zoom--brisket-fries'
                           : product.id === 'brisket-balls'
                             ? 'product-image-zoom product-image-zoom--brisket-balls'
-                            : product.id === 'arwa-water'
-                              ? 'product-image-drink product-image-drink--arwa'
-                              : 'product-image-zoom'
+                            : product.id === 'smoky-tender'
+                              ? 'product-image-zoom product-image-zoom--smoky-tender'
+                              : product.id === 'arwa-water'
+                                ? 'product-image-drink product-image-drink--arwa'
+                                : 'product-image-zoom'
             }
             width={106}
             height={106}

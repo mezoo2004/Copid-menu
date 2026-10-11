@@ -229,6 +229,13 @@ button {
   transform: scale(1.16);
 }
 
+/* Smoky Tender: show the whole box, no extra crop */
+.product-image-frame .product-image-zoom--smoky-tender {
+  object-fit: contain;
+  object-position: center center;
+  transform: scale(1.72);
+}
+
 /* Coca-Cola Light: full can visible, same visual balance as Coca-Cola Original */
 .product-image.product-image--cola-light {
   object-fit: contain;

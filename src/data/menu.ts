@@ -143,6 +143,19 @@ export const products: Product[] = [
     available: true,
   },
   {
+    id: 'smoky-tender',
+    categoryId: 'sides',
+    name: { ar: 'سموكي تندر', en: 'Smoky Tender' },
+    description: {
+      ar: '4 قطع تشكن تندر - صوص سموكي تشيبوتلي - صوص تشيبوتلي رانش - بقدونس',
+      en: '4 pcs Chicken Tenders - Smoky Chipotle Sauce - Chipotle Ranch Sauce - Parsley',
+    },
+    image: '/images/products/smoky-tender.png',
+    calories: null,
+    price: 19,
+    available: true,
+  },
+  {
     id: 'c-fries',
     categoryId: 'sides',
     name: { ar: 'سي فرايز', en: 'C Fries' },
