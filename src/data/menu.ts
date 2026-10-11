@@ -152,7 +152,7 @@ export const products: Product[] = [
     },
     image: '/images/products/smoky-tender.png',
     calories: null,
-    price: 19,
+    price: 18,
     available: true,
   },
   {
