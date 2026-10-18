@@ -222,13 +222,6 @@ button {
   transform: scale(1);
 }
 
-/* Brisket Balls: a little closer, centered */
-.product-image-frame .product-image-zoom--brisket-balls {
-  object-fit: cover;
-  object-position: center center;
-  transform: scale(1.16);
-}
-
 /* Smoky Tender: show the whole box, no extra crop */
 .product-image-frame .product-image-zoom--smoky-tender {
   object-fit: contain;

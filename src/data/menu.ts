@@ -195,19 +195,6 @@ export const products: Product[] = [
     available: true,
   },
   {
-    id: 'brisket-balls',
-    categoryId: 'sides',
-    name: { ar: 'بريسكت بولز', en: 'Brisket Balls' },
-    description: {
-      ar: '5 حبات لحم بريسكت مقلي - بقدونس - جبنة بارميزان - تقدم مع صوص بريسكت',
-      en: '',
-    },
-    image: '/images/products/brisket-balls.png',
-    calories: 620,
-    price: 21,
-    available: true,
-  },
-  {
     id: 'french-fries',
     categoryId: 'fries',
     name: { ar: 'بطاطس مقلية', en: 'French Fries' },

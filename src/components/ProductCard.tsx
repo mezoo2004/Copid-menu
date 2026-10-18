@@ -25,7 +25,6 @@ export function ProductCard({ product }: Props) {
       product.id === 'copid-grilled-chicken' ||
       product.id === 'copid-monster' ||
       product.id === 'brisket-fries' ||
-      product.id === 'brisket-balls' ||
       product.id === 'smoky-tender' ||
       product.id === 'arwa-water' ? (
         <span className="product-image product-image-frame">
@@ -45,8 +44,6 @@ export function ProductCard({ product }: Props) {
                         ? 'product-image-zoom product-image-zoom--monster'
                         : product.id === 'brisket-fries'
                           ? 'product-image-zoom product-image-zoom--brisket-fries'
-                          : product.id === 'brisket-balls'
-                            ? 'product-image-zoom product-image-zoom--brisket-balls'
                             : product.id === 'smoky-tender'
                               ? 'product-image-zoom product-image-zoom--smoky-tender'
                               : product.id === 'arwa-water'
